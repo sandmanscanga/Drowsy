@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  {% if title %}
+    <title>Vulnerable - {{ title }}</title>
+  {% else %}
+    <title>Vulnerable</title>
+  {% endif %}
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/custom.css">
+</head>
+<body>
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/">Vulnerable</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown mr-5">
+              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><big>Standard</big></a>
+              <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item p-1" href="/search-get">GET</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item p-1" href="/search-post">POST</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown mr-5">
+              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><big>Blind</big></a>
+              <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item p-1" href="/search-get-blind">GET</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item p-1" href="/search-post-blind">POST</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="py-5 my-5" role="main">
+    <div class="container text-center">
+      {% block content %}{% endblock content %}
+    </div>
+  </main>
+  <footer>
+    <!-- Example split danger button -->
+    <div class="container pb-5 fixed-bottom">
+      <div class="btn-group dropup">
+        <a href="/" type="button" class="btn btn-lg btn-dark">Exploit</a>
+        <button type="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false"
+        class="btn btn-lg btn-dark dropdown-toggle dropdown-toggle-split">
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div class="dropdown-menu text-center p-4">
+          <a class="dropdown-item p-3" href="/search-get"><big>GET</big></a>
+          <a class="dropdown-item p-3" href="/search-post"><big>POST</big></a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item p-3" href="/search-get-blind"><big>GET-Blind</big></a>
+          <a class="dropdown-item p-3" href="/search-post-blind"><big>POST-Blind</big></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript" src="/static/js/jquery-3.3.1.slim.min.js"></script>
+  <script type="text/javascript" src="/static/js/popper.min.js"></script>
+  <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+</body>
+</html>

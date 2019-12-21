@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+    <form action="" method="POST">
+      <div class="form-row">
+        <div class="col">
+          <h1>POST</h1>
+        </div>
+        <div class="col">
+          <input class="form-control-lg" type="text" name="id" placeholder="Search by id..." autofocus>
+        </div>
+        <div class="col">
+          <button class="btn btn-lg btn-dark" name="submit" value="Search" type="submit">Search</button>
+        </div>
+        <div class="col">
+          {% if result %}
+            <div id="vuln-text">
+              {% for row in result %}
+                <p><big>
+                  {% for column in row %}
+                    {% if column %}
+                      <span>{{ column }}</span>
+                    {% endif %}
+                  {% endfor %}
+                </big></p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </form>
+{% endblock content %}

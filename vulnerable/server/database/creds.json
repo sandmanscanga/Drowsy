@@ -1,0 +1,6 @@
+{
+    "user": "vulnerable",
+    "passwd": "insecure",
+    "host": "localhost",
+    "db": "vuln"
+}
