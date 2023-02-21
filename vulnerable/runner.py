@@ -9,7 +9,7 @@ def main():
     p.add_argument("-s", "--size", metavar="db_size", type=int, default=250, help="specify total rows to use in the database", required=False)
     args = p.parse_args()
     app = create_app(db_size=args.size)
-    app.run(debug=False, host="127.0.0.1", port=5000)
+    app.run(debug=False, host="127.0.0.1", port=80)
 
 
 if __name__ == "__main__":

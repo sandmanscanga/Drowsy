@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 from flask import Flask, Blueprint, render_template, request
 from urllib.parse import unquote_plus
-import MySQLdb
+import mysql.connector
 import random
 import json
 import sys
